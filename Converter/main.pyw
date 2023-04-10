@@ -57,4 +57,5 @@ calculation = Label(root, text = "", bg = "dark blue", fg = "white", pady = 57, 
 calculation.pack(anchor = "center", fill = X)
 
 
+
 root.mainloop()
