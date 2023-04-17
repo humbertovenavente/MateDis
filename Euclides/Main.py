@@ -4,7 +4,7 @@ from tkinter import ttk
 #import Euclides
 
 
-# Función que realiza el cálculo con los dos números ingresados
+# Funcion que realiza el calculo con los dos numeros ingresados
 
 def euclides(a, b):
    
@@ -14,34 +14,34 @@ def euclides(a, b):
         return euclides(b, a % b)
 
 
-# Función que se ejecuta cuando el botón "Calcular" es presionado
+# Funcion que se ejecuta cuando el boton "Calcular" es presionado
 def calcularMCD():
     # Obtener los valores ingresados por el usuario
     num1 = float(entry1.get())
     num2 = float(entry2.get())
 
-    # Llamar a la función para calcular el resultado
+    # Llamar a la funcion para calcular el resultado
     resultado = euclides(num1, num2)
 
-    # Actualizar la etiqueta con el resultado del cálculo
+    # Actualizar la etiqueta con el resultado del colculo
     label_resultado.config(text=f"El resultado es: {resultado}")
 
-# Crear la ventana de la interfaz gráfica
+# Crear la ventana de la interfaz grafica
 ventana = tk.Tk()
 ventana.title("Calculadora de Maximo Comun Divisor")
 
-# Crear las etiquetas y campos de entrada para los números
-label1 = tk.Label(ventana, text="Ingrese el primer número:")
+# Crear las etiquetas y campos de entrada para los numeros
+label1 = tk.Label(ventana, text="Ingrese el primer numero:")
 label1.pack()
 entry1 = tk.Entry(ventana)
 entry1.pack()
 
-label2 = tk.Label(ventana, text="Ingrese el segundo número:")
+label2 = tk.Label(ventana, text="Ingrese el segundo numero:")
 label2.pack()
 entry2 = tk.Entry(ventana)
 entry2.pack()
 
-# Crear el botón para calcular la suma
+# Crear el boton para calcular la suma
 boton_calcular = tk.Button(ventana, text="Calcular MCD", command=calcularMCD)
 boton_calcular.pack()
 
@@ -49,5 +49,5 @@ boton_calcular.pack()
 label_resultado = tk.Label(ventana, text="")
 label_resultado.pack()
 
-# Ejecutar el loop principal de la interfaz gráfica
+# Ejecutar el loop principal de la interfaz grafica
 ventana.mainloop()
