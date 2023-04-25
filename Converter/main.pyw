@@ -11,7 +11,7 @@ root.geometry(f"{600}x{350}")
 root.title("Numerical Base Converter")
 
 
-bases = [str(i) for i in range(1, 65)]
+bases = [str(i) for i in (2,8,10,16)]
 ttk.Style().configure("style1.TCombobox", foreground="blue", background="black")
 
 def createDropBox(textVariable, textToDisplay):
@@ -55,7 +55,6 @@ CalculateButton.pack(fill = X, anchor = "center")
 
 calculation = Label(root, text = "", bg = "dark blue", fg = "white", pady = 57, font = "ms-sans 20")
 calculation.pack(anchor = "center", fill = X)
-
 
 
 root.mainloop()
