@@ -5,7 +5,7 @@ from itertools import product
 # (el usuario elige el numero devariables), implemente un programa que satisfaga los siguientesprocedimientos:
 # ▪ Mostrar la tabla de verdad y el mapa de Karnaugh de la funcionBooleana.
 # ▪ Aplicar la tecnica de los mapas de Karnaugh, para obtenertodas las formas de simplificar la funcion 
-# (El programa debemostrar las agrupaciones de los rectangulos que fueronempleados)
+# (El programa debemostrar las agrupaciones de los rectangulos que fueronempleados) gggg
 
 
 #Se crea la clase booleana para las variables
