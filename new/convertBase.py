@@ -1,4 +1,6 @@
-correspondenceString = r"""0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz/-"""
+
+#
+correspondenceString = r"""0123456789ABCDEFabcdef/-"""
 
 def convert(number = '10', baseFrom = 10, baseTo = 10):
     check = checks(number, baseFrom, baseTo)
@@ -36,14 +38,14 @@ def convertToBase(number = "10", baseTo = 10, correspondenceString = corresponde
 def checks(number, baseFrom, baseTo, correspondenceString = correspondenceString):
     try:
         baseTo = int(baseTo);baseFrom = int(baseFrom)
-    except Exception:return checkMessage(False, "invalid base, must be a numerical value")
+    except Exception:return checkMessage(False, "base invalida")
     
     if baseTo < 1 or baseFrom < 1:return checkMessage(False, "base must be greator then 0")
     if baseTo > len(correspondenceString):return checkMessage(False, "this base is not supported")
     for i in str(number):
-        if i not in correspondenceString:return checkMessage(False, "invalid charater")
+        if i not in correspondenceString:return checkMessage(False, "Caracter Invalido")
     
-    return checkMessage(True, "All parameters accepted")
+    return checkMessage(True, "Aceptado")
     
 
 class checkMessage:

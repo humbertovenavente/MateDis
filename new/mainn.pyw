@@ -4,17 +4,20 @@ from tkinter import Tk, Label, Frame, X, StringVar, LEFT, Entry, RIGHT, Button
 from tkinter import ttk
 from tkinter import messagebox
 import convertBase
+from itertools import product
 
-
-window = Tk()  # create a window widget
+#Colocamos las caracteristicas del window widget
+window = Tk()  # creamos el  window widget
 window.rowconfigure(0, weight=1)
 window.columnconfigure(0, weight=1)
 window.maxsize(610, 445)
 window.minsize(590, 445)
 window.geometry(f"{600}x{950}")
- 
 
 
+
+
+#Agregamos las paginas
 page1 = Frame(window)
 page2 = Frame(window)
 page3 = Frame(window)
@@ -28,8 +31,8 @@ def show_frame(frame):
 
 show_frame(page1)
 
-# ============= Page 1 =========
-
+# ============= Pagina 1 =========================================================================
+#Fondo de la pagina inicial
 page1.config(background='light cyan')
 
 
@@ -65,29 +68,29 @@ def calcularMCD():
 
 #Se crea la ventana principal 
 
-window.title("Proyecto de Informatica")
+window.title("Proyecto de Matemática Discreta")
+
+
+
 
 k = Label(page1, text='¡Bienvenidos!', font=('Arial', 23, 'bold'), bg='light cyan' )
 k.place(x=205, y=85)
 
-pp= Label(page1, text='Username', font=('Arial', 15, 'bold'), bg='light cyan')
-pp.place(x=175, y=150)
+dd = Button(page1, text='MCD', font=('Arial', 15, 'bold'), command=lambda: show_frame(page2))
+dd.place(x=250, y=200)
 
-pp_entry = Entry(page1)
-pp_entry.place(x=295, y=155)
+pp = Button(page1, text='Converter', font=('Arial', 15, 'bold'), command=lambda: show_frame(page3))
+pp.place(x=250, y=250)
 
-pp_label2 = Label(page1, text='Password', font=('Arial', 15, 'bold'), bg='light cyan')
-pp_label2.place(x=175, y=200)
+ppp_button3 = Button(page1, text='Mapa', font=('Arial', 15, 'bold'), command=lambda: show_frame(page4))
+ppp_button3.place(x=250, y=300)
 
-pp_entry2 = Entry(page1)
-pp_entry2.place(x=295, y=205)
-
-ppp_button3 = Button(page1, text='Ingresar', font=('Arial', 15, 'bold'), command=lambda: show_frame(page2))
-ppp_button3.place(x=250, y=250)
+k = Label(page1, text='Elige una opcion :]', font=('Corbel', 20), bg='light cyan' )
+k.place(x=200, y=140)
 
 
-
-#pagina 1
+# ======================= pagina 2 =====================================================================
+# Maximo comun divisor
 
 page2.config(background='antique white')
 
@@ -130,10 +133,12 @@ pg1_button3.place(x=510, y=400)
 
 
 
-# ======== Page 3 ===========
+# ======== Page 3 ===========================================================================================
+# Convertidor de Base
 
+#Se importo CovertBase y procedemos con unas crefinicions de un driopbox y del boton calcular 
 
-bases = [str(i) for i in (2,8,10,16)]
+bases = [str(i) for i in (2,8,10,16)] #Definimos que las bases solo acepten 2,8,10 y 16
 ttk.Style().configure("style1.TCombobox", foreground="blue", background="black")
 
 def createDropBox(textVariable, textToDisplay):
@@ -155,6 +160,8 @@ def calculate():
 
 baseFrom = StringVar();baseTo = StringVar();number = StringVar()
 
+#Empezamos a crear los espacios para que ingrese el numero
+
 frame1 = Frame(page3)
 frame1.pack(anchor = "center", pady = 10)
 Label(frame1, text = "Enter number: ").pack(side = LEFT)
@@ -167,24 +174,28 @@ def limit(number):
 number.trace("w", lambda *args: limit(number))
 
         
-
+#Labels
 createDropBox(baseFrom, "Base From:")
 createDropBox(baseTo, "Base To:     ")
 
+#Botones para que pueda irse a otra pagina
 pg2_button = Button(page3, text='Mapa', font=('Arial', 13, 'bold'), command=lambda: show_frame(page4), bg = "black", fg = "yellow")
 pg2_button.place(x=510, y=400)
 pg1_buttonz = Button(page3, text='MCD', font=('Arial', 13, 'bold'), command=lambda: show_frame(page2), bg = "black", fg = "yellow")
 pg1_buttonz.place(x=30, y=400)
 
+#Calcular boton con su comando calculate
 CalculateButton = Button(page3, text = "calculate", bg = "black", fg = "yellow", font = "ms-sans 30", command = calculate)
 CalculateButton.pack(fill = X, anchor = "center")
 
+
+#Creamos el resultado
 calculation = Label(page3, text = "", bg = "dark blue", fg = "white", pady = 57, font = "ms-sans 20")
 calculation.pack(anchor = "center", fill = X)
 
 
 
-
+#El titulo
 pag2_label = Label(page3, text='Base Converter', font=('Arial', 30, 'bold'))
 pag2_label.place(x=150, y=390)
 
@@ -196,15 +207,30 @@ pag2_label.place(x=150, y=390)
 
 
 # ======== Page 4 ===========
+# Mapas de Karnaugh
+
+#Solamente agregamos los botones
+
 page4.config(background='gray')
-pag3_label = Label(page4, text='Mapa de Karnaugh', font=('Arial', 30, 'bold'))
+pag3_label = Label(page4, text='Mapa de Karnaugh ', font=('Arial', 30, 'bold'))
 pag3_label.place(x=50, y=100)
+pag3_label = Label(page4, text='está en diferente interfaz', font=('Arial', 30, 'bold'))
+pag3_label.place(x=50, y=150)
 
 pg3_button = Button(page4, text='Converter', font=('Arial', 13, 'bold'), command=lambda: show_frame(page3))
-pg3_button.place(x=170, y=200)
+pg3_button.place(x=30, y=400)
 
 pg33button3 = Button(page4, text='MCD', font=('Arial', 13, 'bold'), command=lambda: show_frame(page3))
-pg33button3.place(x=300, y=200)
+pg33button3.place(x=510, y=400)
+
+# Mapas de Karnaugh: Esta opcion consta de dos partes, dada unafuncion Booleana de 2, 3 o 4 variables 
+# (el usuario elige el numero devariables), implemente un programa que satisfaga los siguientesprocedimientos:
+# ▪ Mostrar la tabla de verdad y el mapa de Karnaugh de la funcionBooleana.
+# ▪ Aplicar la tecnica de los mapas de Karnaugh, para obtenertodas las formas de simplificar la funcion 
+# (El programa debemostrar las agrupaciones de los rectangulos que fueronempleados) gggg
+
+
+#Se crea la clase booleana para las variables
 
 
 window.mainloop()
