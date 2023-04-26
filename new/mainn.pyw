@@ -1,3 +1,8 @@
+#Proyecto de Matematicas Discretas
+#Participantes: Jose Humberto Venavente y Jose Gregorio Coronel
+#Grupo 2
+#Universidad del Istmo
+
 from tkinter import *
 import tkinter as tk
 from tkinter import Tk, Label, Frame, X, StringVar, LEFT, Entry, RIGHT, Button
@@ -72,18 +77,19 @@ window.title("Proyecto de Matemática Discreta")
 
 
 
+#los botones principales 
 
 k = Label(page1, text='¡Bienvenidos!', font=('Arial', 23, 'bold'), bg='light cyan' )
 k.place(x=205, y=85)
 
-dd = Button(page1, text='MCD', font=('Arial', 15, 'bold'), command=lambda: show_frame(page2))
-dd.place(x=250, y=200)
+dd = Button(page1, text='Maximo Comun Divisor', font=('Arial', 15, 'bold'), command=lambda: show_frame(page2))
+dd.place(x=180, y=200)
 
-pp = Button(page1, text='Converter', font=('Arial', 15, 'bold'), command=lambda: show_frame(page3))
-pp.place(x=250, y=250)
+pp = Button(page1, text='Base Converter', font=('Arial', 15, 'bold'), command=lambda: show_frame(page3))
+pp.place(x=210, y=250)
 
-ppp_button3 = Button(page1, text='Mapa', font=('Arial', 15, 'bold'), command=lambda: show_frame(page4))
-ppp_button3.place(x=250, y=300)
+ppp_button3 = Button(page1, text='Mapa de Karnaugh', font=('Arial', 15, 'bold'), command=lambda: show_frame(page4))
+ppp_button3.place(x=200, y=300)
 
 k = Label(page1, text='Elige una opcion :]', font=('Corbel', 20), bg='light cyan' )
 k.place(x=200, y=140)
@@ -92,22 +98,22 @@ k.place(x=200, y=140)
 # ======================= pagina 2 =====================================================================
 # Maximo comun divisor
 
-page2.config(background='antique white')
+page2.config(background='light salmon')
 
-pag_label = Label(page2, text='Maximo Comun Divisor', font=('Arial', 23, 'bold'), bg='antique white')
+pag_label = Label(page2, text='Maximo Comun Divisor', font=('Arial', 23, 'bold'), bg='light salmon')
 pag_label.place(x=135, y=390)
 
 #Se crea los widgets necesarios con informacion para el usuario
-label_num1 = tk.Label(page2, text="Ingrese el primer numero:", font=('Arial', 16, 'bold'), bg='antique white')
+label_num1 = tk.Label(page2, text="Ingrese el primer numero:", font=('Arial', 16, 'bold'), bg='light salmon')
 entry_num1 = tk.Entry(page2)
 
-label_num2 = tk.Label(page2, text="Ingrese el segundo numero:", font=('Arial', 16, 'bold'), bg='antique white')
+label_num2 = tk.Label(page2, text="Ingrese el segundo numero:", font=('Arial', 16, 'bold'), bg='light salmon')
 entry_num2 = tk.Entry(page2)
 
 button_calculate = tk.Button(page2, text="Calcular", font=('Arial', 14, 'bold'), command=calcularMCD)
 
 
-label_result = tk.Label(page2, text="", bg='antique white')
+label_result = tk.Label(page2, text="", bg='light salmon')
 
 
 
@@ -125,11 +131,10 @@ label_result.grid(row=3, column=0, columnspan=2)
 
 
 
-pg1_button = Button(page2, text='Converter', font=('Arial', 13, 'bold'), command=lambda: show_frame(page3))
+pg1_button = Button(page2, text='Menu', font=('Arial', 13, 'bold'), command=lambda: show_frame(page1))
 pg1_button.place(x=20, y=400)
 
-pg1_button3 = Button(page2, text='Mapa', font=('Arial', 13, 'bold'), command=lambda: show_frame(page4))
-pg1_button3.place(x=510, y=400) 
+
 
 
 
@@ -179,18 +184,17 @@ createDropBox(baseFrom, "Base From:")
 createDropBox(baseTo, "Base To:     ")
 
 #Botones para que pueda irse a otra pagina
-pg2_button = Button(page3, text='Mapa', font=('Arial', 13, 'bold'), command=lambda: show_frame(page4), bg = "black", fg = "yellow")
-pg2_button.place(x=510, y=400)
-pg1_buttonz = Button(page3, text='MCD', font=('Arial', 13, 'bold'), command=lambda: show_frame(page2), bg = "black", fg = "yellow")
-pg1_buttonz.place(x=30, y=400)
+
+pg1_buttonz = Button(page3, text='Menu', font=('Arial', 13, 'bold'), command=lambda: show_frame(page1), bg = "black", fg = "yellow")
+pg1_buttonz.place(x=20, y=400)
 
 #Calcular boton con su comando calculate
-CalculateButton = Button(page3, text = "calculate", bg = "black", fg = "yellow", font = "ms-sans 30", command = calculate)
+CalculateButton = Button(page3, text = "calcular", bg = "black", fg = "yellow", font = "ms-sans 30", command = calculate)
 CalculateButton.pack(fill = X, anchor = "center")
 
 
 #Creamos el resultado
-calculation = Label(page3, text = "", bg = "dark blue", fg = "white", pady = 57, font = "ms-sans 20")
+calculation = Label(page3, text = "", bg = "royal blue", fg = "white", pady = 57, font = "ms-sans 20")
 calculation.pack(anchor = "center", fill = X)
 
 
@@ -206,22 +210,19 @@ pag2_label.place(x=150, y=390)
 
 
 
-# ======== Page 4 ===========
+# ========================================= Page 4 =========================================================
 # Mapas de Karnaugh
 
 #Solamente agregamos los botones
 
-page4.config(background='gray')
-pag3_label = Label(page4, text='Mapa de Karnaugh ', font=('Arial', 30, 'bold'))
-pag3_label.place(x=50, y=100)
-pag3_label = Label(page4, text='está en diferente interfaz', font=('Arial', 30, 'bold'))
-pag3_label.place(x=50, y=150)
+page4.config(background='light salmon')
+pag3_label = Label(page4, text='Mapa de Karnaugh ', font=('Arial', 30, 'bold'), bg= 'light salmon')
+pag3_label.place(x=125, y=380)
 
-pg3_button = Button(page4, text='Converter', font=('Arial', 13, 'bold'), command=lambda: show_frame(page3))
-pg3_button.place(x=30, y=400)
+pg3_button = Button(page4, text='Menu', font=('Arial', 13, 'bold'), command=lambda: show_frame(page1))
+pg3_button.place(x=20, y=400)
 
-pg33button3 = Button(page4, text='MCD', font=('Arial', 13, 'bold'), command=lambda: show_frame(page3))
-pg33button3.place(x=510, y=400)
+
 
 # Mapas de Karnaugh: Esta opcion consta de dos partes, dada unafuncion Booleana de 2, 3 o 4 variables 
 # (el usuario elige el numero devariables), implemente un programa que satisfaga los siguientesprocedimientos:
@@ -231,6 +232,106 @@ pg33button3.place(x=510, y=400)
 
 
 #Se crea la clase booleana para las variables
+class BooleanFunction:
+    def __init__(self, variables, function):
+        self.variables = variables
+        self.function = function
+        
+    def evaluate(self, values):
+        variables = dict(zip(self.variables, values))
+        return eval(self.function, variables)
+
+class Generador:
+    def __init__(self, page4):
+        self.master = page4
+       
+        
+        #Variables de entrada
+        self.var_inputs = tk.StringVar()
+        self.var_function = tk.StringVar()
+        
+        #Se crea y se pide al usuario que ingrese las variables de entrada
+        tk.Label(page4, text="Ingrese las variables de entrada").grid(row=0, column=0, sticky="w")
+        self.entry_inputs = tk.Entry(page4, textvariable=self.var_inputs)
+        self.entry_inputs.grid(row=0, column=1)
+        
+        #Se crea y se pide al usuario que ingrese la funcion booleana
+        tk.Label(page4, text="Ingrese la funcion booleana").grid(row=1, column=0, sticky="w")
+        self.entry_function = tk.Entry(page4, textvariable=self.var_function)
+        self.entry_function.grid(row=1, column=1)
+        
+        #Se crea el boton que genera la tabla y el mapa de karnaugh
+        tk.Button(page4, text="Crear tabla y mapa", command=self.generate_table_kmap).grid(row=2, column=1)
+        
+        #Label de la tabla de Verdad
+        self.table = tk.LabelFrame(page4, text="Tabla de verdad")
+        self.table.grid(row=3, column=0, columnspan=2, pady=10)
+        
+        #Label del mapa de Karnaugh
+        self.kmap = tk.LabelFrame(page4, text="Mapa de Karnaugh")
+        self.kmap.grid(row=4, column=0, columnspan=2, pady=10)
+        
+
+        #Se define la funcion para generar la tabla de verdad
+    def generate_table_kmap(self):
+
+        #Se obtienen las variables booleanas
+        inputs = [v.strip() for v in self.var_inputs.get().split(",")]
+        function = self.var_function.get()
+        
+        #Se crea la funcion booleana
+        bf = BooleanFunction(inputs, function)
+        
+        #Se crea la tabla de verdad
+        header = [" ".join(inputs) + "  Resultado"]
+        table_data = [header]
+        for values in product([1, 0], repeat=len(inputs)):
+            row_data = ["    ".join(str(v) for v in values)]
+            row_data.append(int(bf.evaluate(values)))
+            table_data.append(row_data)
+        
+        #Despliega la tabla de verdad
+        for i, row_data in enumerate(table_data):
+            for j, cell_data in enumerate(row_data):
+                tk.Label(self.table, text=cell_data).grid(row=i, column=j)
+        
+
+        #Se crea el mapa de Karnaugh
+        kmap_data = {}
+        for values in product([1, 0], repeat=len(inputs)):
+            index = "".join(str(int(v)) for v in values)
+            kmap_data[index] = int(bf.evaluate(values))
+        
+        #Se despliega el mapa de Karnaugh
+        kmap_table = tk.LabelFrame(self.kmap)
+        kmap_table.pack()
+        for i, row in enumerate(values):
+            tk.Label(kmap_table, text=row).grid(row=i+1, column=0, padx=5)
+        
+        for i, column in enumerate(values):
+            tk.Label(kmap_table, text=column).grid(row=0, column=i+1, pady=5)
+            for j, value in enumerate([1, 0]):
+                index1 = " ".join(str(int(v)) for v in self._get_combination(inputs[0][i], value, inputs))
+                index2 = " ".join(str(int(v)) for v in self._get_combination(inputs[0][i], not value, inputs))
+                if kmap_data[index1] == 1 or kmap_data[index2] == 1 or kmap_data[index2] == 0 or kmap_data[index2] == 0:
+                    text = "1"
+                else:
+                    text = "0"
+                tk.Label(kmap_table, text=text, width=2, height=1, borderwidth=1, relief="solid").grid(row=j+1, column=i+1)
+    
+    def _get_combination(self, variable, value, inputs):
+        combination = []
+        for input_var in inputs:
+            if input_var == variable:
+                combination.append(value)
+            else:
+                combination.append(None)
+        return combination
+    
+#hacemos que lo muestre el generador en la pagina 4
+app = Generador(page4)
 
 
 window.mainloop()
+
+
